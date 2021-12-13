@@ -1,2 +1,0 @@
-File path for images in public folder
-If no right button exists then show only one button at the centre of the container 1.02
