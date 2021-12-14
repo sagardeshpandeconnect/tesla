@@ -11,11 +11,11 @@ function Header() {
   // console.log(cars)
   return (
     <Container>
-      <a><img src="/images/logo.svg" alt="" /></a>
+      <img src="/images/logo.svg" alt="" />
       <Menu>
         {cars && cars.map((car, index) => (
 
-          <a key={index} href="#">{car}</a>
+          <Button key={index} >{car}</Button>
         ))}
         {/* <a href="#">Model 3</a>
         <a href="#">Model X</a>
@@ -24,8 +24,9 @@ function Header() {
         <a href="#">Solar Panel</a> */}
       </Menu>
       <RightMenu>
-        <a href="#">Shop</a>
-        <a href="#">Account</a>
+        <Button>Shop</Button>
+        {/* <Button>hello</Button> */}
+        <Button >Account</Button>
         <CustomMenu onClick={() => { setBurgerStatus(true) }} />
       </RightMenu>
       <BurgerNav show={burgerStatus}>
@@ -34,28 +35,37 @@ function Header() {
         </CloseWrapper>
         {cars && cars.map((car, index) => (
 
-          <li key={index}><a href="#">{car}</a></li>
+          <li key={index}><Button>{car}</Button></li>
         ))}
-        <li><a href="#">Existing Inventory</a></li>
-        <li><a href="#">Used Inventory</a></li>
-        <li><a href="#">Trade-In</a></li>
-        <li><a href="#">Cybertruck</a></li>
-        <li><a href="#">Roadster</a></li>
-        <li><a href="#">Semi</a></li>
-        <li><a href="#">Charging</a></li>
-        <li><a href="#">Powerwall</a></li>
-        <li><a href="#">Commercial Energy</a></li>
-        <li><a href="#">Powerwall</a></li>
-        <li><a href="#">Find Us</a></li>
-        <li><a href="#">Support</a></li>
-        <li><a href="#">Investor Relations</a></li>
-        <li><a href="#"><Language /> United States</a></li>
+        <li><Button>Used Inventory</Button></li>
+        <li><Button>Trade-In</Button></li>
+        <li><Button>Cybertruck</Button></li>
+        <li><Button>Existing Inventory</Button></li>
+        <li><Button>Roadster</Button></li>
+        <li><Button>Semi</Button></li>
+        <li><Button>Charging</Button></li>
+        <li><Button>Powerwall</Button></li>
+        <li><Button>Commercial Energy</Button></li>
+        <li><Button>Powerwall</Button></li>
+        <li><Button>Find Us</Button></li>
+        <li><Button>Support</Button></li>
+        <li><Button>Investor Relations</Button></li>
+        <li><Button><Language /> United States</Button></li>
       </BurgerNav>
     </Container>
   )
 }
 
 export default Header;
+
+const Button = styled.button`
+background-color:transparent;
+border:none;
+font-weight:800;
+  text-transform: uppercase;
+  padding: 0 10px;
+  cursor:pointer;
+`
 
 const Container = styled.div`
 display: flex;
